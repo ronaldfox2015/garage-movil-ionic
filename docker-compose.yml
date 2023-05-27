@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  frontend:
+    container_name: $CONTAINER_NAME
+    image: $IMAGE_DEV
+    working_dir: /app
+    command: "ionic serve --external --port 80"
+    environment:
+      VIRTUAL_HOST: 'local.garage.com'
+    volumes:
+      - ./app:/app
+      - ~/.aws/:/app/.aws/:rw
+    ports:
+      - "80:80"

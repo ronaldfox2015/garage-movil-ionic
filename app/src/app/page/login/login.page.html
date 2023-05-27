@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Correo electrónico</ion-label>
+      <ion-input type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="onSubmit()">Iniciar sesión</ion-button>
+
+  <div class="social-login">
+    <button ion-button (click)="loginWithGoogle()">Iniciar sesión con Google</button>
+    <button ion-button (click)="loginWithFacebook()">Iniciar sesión con Facebook</button>
+  </div>
+
+</ion-content>
