@@ -16,9 +16,17 @@
   </ion-list>
   <ion-button expand="full" (click)="onSubmit()">Iniciar sesión</ion-button>
 
-  <div class="social-login">
-    <button ion-button (click)="loginWithGoogle()">Iniciar sesión con Google</button>
-    <button ion-button (click)="loginWithFacebook()">Iniciar sesión con Facebook</button>
-  </div>
+
+  <ion-content>
+    <ion-button expand="full" (click)="loginWithFacebook()">
+      <ion-icon name="logo-facebook"></ion-icon>
+      Login with Facebook
+    </ion-button>
+
+    <ion-button expand="full" (click)="loginWithGoogle()">
+      <ion-icon name="logo-google"></ion-icon>
+      Login with Google
+    </ion-button>
+  </ion-content>
 
 </ion-content>
