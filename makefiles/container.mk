@@ -7,6 +7,11 @@ IMAGE_DEPLOY_DEV = $(PROJECT_NAME):$(ENV)
 APP_DIR          = app
 MODE						 ?= image
 YARN_ENVIRONMENT = "--production"
+DIRECTORY		 ?= home
+ACTION			 ?= page page/$(DIRECTORY)
+COMMAND			 ?= generate
+IONIC    		 ?= ionic $(COMMAND) $(ACTION)
+
 build:##@Global Build project : make build MODE=image, make build MODE=build-dist
 	docker build --build-arg UID_LOCAL=$(UID_LOCAL) \
 		--build-arg GID_LOCAL=$(GID_LOCAL) \
@@ -27,11 +32,12 @@ install: ##@Global install dependencies : make install
 		npm install --force
 
 
-upgrade: ##@Global install dependencies
-	@docker container run --workdir "/${APP_DIR}" --rm -i \
+build-ionic: ##@Global install dependencies : make build-ionic D IONIC="generate component components/button"
+	@docker container run --workdir "/${APP_DIR}" -i \
 		-v "${PWD}/${APP_DIR}":/${APP_DIR} \
 		${IMAGE_DEPLOY_DEV} \
-		yarn upgrade
+		ionic $(IONIC)
+
 
 up: ##@Local Start the project
 	export IMAGE_DEV="$(IMAGE_DEPLOY_DEV)" && CONTAINER_NAME="$(CONTAINER_NAME)" && PATH_SERVICE="$(PATH_SERVICE)" && NETWORK=${NETWORK} \

@@ -4,10 +4,12 @@ import { IonicModule } from '@ionic/angular';
 
 import { AppRoutingModule } from '../app-routing.module';
 import {SliderComponent} from "./slider/slider.component";
+import { PreloadImageComponent } from "./preload-image/preload-image.component";
 
 @NgModule({
   declarations: [
-    SliderComponent
+    SliderComponent,
+    PreloadImageComponent
   ],
   imports: [
     CommonModule,
@@ -15,7 +17,8 @@ import {SliderComponent} from "./slider/slider.component";
     AppRoutingModule
   ],
   exports: [
-    SliderComponent
+    SliderComponent,
+    PreloadImageComponent
   ]
 })
 export class ComponentsModule { }

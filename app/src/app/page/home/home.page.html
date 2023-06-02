@@ -1,19 +1,23 @@
 
 <div class="landing-container">
-  <h1>Bienvenido</h1>
-  <p>¡Descubre nuestras nuestras mejores ofertas!</p>
-  <img src="../../assets/slide/cochera2.jpg" alt="Imagen 1">
+  <div>
+    <h1>Bienvenido</h1>
+  </div>
+  <div>
+    <p>¡Descubre nuestras nuestras mejores ofertas!</p>
+  </div>
+  <div class="images">
+    <img src="../../assets/slide/cochera2.jpg" alt="Imagen 1">
+    <img src="../../assets/slide/cochera3.jpg" alt="Imagen 1">
+    <img src="../../assets/slide/cochera4.jpg" alt="Imagen 1">
+    <img src="../../assets/slide/cochera5.jpg" alt="Imagen 1">
 
-<!--  <ion-slides>-->
-<!--    <ion-slide>-->
-<!--      <img src="../../assets/slide/cochera2.jpg" alt="Imagen 1">-->
-<!--    </ion-slide>-->
-<!--    <ion-slide>-->
-<!--      <img src="../../assets/slide/cochera3.jpg" alt="Imagen 2">-->
-<!--    </ion-slide>-->
-<!--    &lt;!&ndash; Agrega más ion-slides según la cantidad de imágenes que desees mostrar &ndash;&gt;-->
-<!--  </ion-slides>-->
-  <ion-button expand="full" (click)="login()">Ingresar</ion-button>
-  <ion-button expand="full" (click)="register()">Registrar</ion-button>
+  </div>
+  <div>
+    <app-button [textoBoton]="'Ingresar'" (botonClickeado)="login()"></app-button>
+    <app-button [textoBoton]="'Registrar'" (botonClickeado)="register()"></app-button>
+
+  </div>
+
 
 </div>

@@ -5,7 +5,7 @@ services:
     container_name: $CONTAINER_NAME
     image: $IMAGE_DEV
     working_dir: /app
-    command: "ionic serve --external --port 80"
+    command: "ionic serve --external --port 80 -- --proxy-config proxy.conf.json"
     environment:
       VIRTUAL_HOST: 'local.garage.com'
     volumes:

@@ -1,10 +1,13 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Registro</ion-title>
+    <ion-title [class.title] >Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-thumbnail class="user-image">
+    <img src="./../../../assets/images/avatar.png">
+  </ion-thumbnail>
   <ion-list>
     <ion-item>
       <ion-label position="floating">Nombre</ion-label>
@@ -22,10 +25,23 @@
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Confirmar contraseña</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-label position="floating">Cell</ion-label>
+      <ion-input type="text"></ion-input>
     </ion-item>
+
+<!--    <ion-item>-->
+<!--      <ion-label position="floating">Tipo de Usuario</ion-label>-->
+<!--      <ion-input type="text"></ion-input>-->
+<!--    </ion-item>-->
+    <ion-item>
+      <ion-select label="Tipo de Usuario" placeholder="Seleccione">
+        <ion-select-option value="1">Arrendatario</ion-select-option>
+        <ion-select-option value="2">Arrendador</ion-select-option>
+      </ion-select>
+    </ion-item>
+
   </ion-list>
 
-  <ion-button expand="full" color="primary" (click)="register()">Registrarse</ion-button>
+  <ion-button class="sign-in-btn" type="submit" expand="block" (click)="register()">Ingresar</ion-button>
+
 </ion-content>

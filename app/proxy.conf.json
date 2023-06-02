@@ -1,0 +1,7 @@
+{
+  "/api/*": {
+    "target": "https://happyparking.keyoficiales.com",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

@@ -4,14 +4,11 @@ ion-header {
   justify-content: center;
 }
 
-ion-toolbar {
-  background-color: #a5b0fe;
-}
-
-ion-title {
+title {
+  flex-direction: column;
   justify-content: center;
-  display: flex;
   text-align: center;
-  color: #111113;
 
 }
+
+

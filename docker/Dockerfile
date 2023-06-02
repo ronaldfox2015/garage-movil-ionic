@@ -15,6 +15,7 @@ RUN apt-get update \
 #
 #RUN yarn global add @ionic/cli
 #RUN yarn global add @ionic/angular@latest
+RUN npm install -g npm@9.6.7
 RUN npm install -g @ionic/cli
 RUN npm i -D -E @angular/cli
 
