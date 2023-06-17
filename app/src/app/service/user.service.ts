@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {UserModel} from "./model/user.model";
 
 @Injectable({
   providedIn: 'root'
@@ -25,4 +26,34 @@ export class UserService {
     );
     return this.http.post(`/api/Usuario/ValidaSesion`, JSON.stringify(params), { headers });
   }
+
+  async get(userId: number): Promise<unknown> {
+    const headers = new HttpHeaders(
+      {
+        'Content-Type': 'application/json'
+      }
+    );
+    return new Promise(async (resolve, reject) => {
+      await this.http.get(`/api/Usuario/${userId}`, { headers }).subscribe(
+        (response: any) => {
+          resolve(response);
+        },
+        (error) => {
+          console.log(error)
+
+          reject([]);
+        },
+      );
+    })
+  }
+
+  add(user: UserModel): Observable<any> {
+    const headers = new HttpHeaders(
+      {
+        'Content-Type': 'application/json'
+      }
+    );
+    return this.http.post(`/api/Usuario`, JSON.stringify(user), { headers });
+  }
+
 }

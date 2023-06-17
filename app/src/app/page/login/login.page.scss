@@ -4,7 +4,10 @@
   --padding-end: 16px;
   --padding-start: 16px;
   --padding-top: 16px;
-
+  .user-image {
+    --size: 100px;
+    margin: auto;
+  }
   .auth-title {
     font-weight: bold;
     margin-bottom: 64px;

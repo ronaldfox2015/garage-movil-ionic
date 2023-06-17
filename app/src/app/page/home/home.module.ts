@@ -15,6 +15,7 @@ import {ButtonComponent} from "../../components/button/button.component";
     FormsModule,
     IonicModule,
     HomePageRoutingModule
+
   ],
     declarations: [HomePage, ButtonComponent]
 })

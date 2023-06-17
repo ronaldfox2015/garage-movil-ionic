@@ -8,7 +8,15 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    // FB.init({
+    //   appId: 'TU_APP_ID',
+    //   cookie: true,
+    //   xfbml: true,
+    //   version: 'v13.0'
+    // });
+
+  }
 
   ngOnInit() {
   }

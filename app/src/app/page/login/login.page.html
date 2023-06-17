@@ -2,7 +2,11 @@
   <h2 class="auth-title">
     Login
   </h2>
+    <ion-thumbnail class="user-image">
+      <img src="./../../../assets/images/avatar.png">
+    </ion-thumbnail>
     <form action="#" >
+
       <ion-list class="inputs-list" lines="full">
         <ion-item class="input-item">
           <ion-input [(ngModel)]="email" name="email"  type="email"  placeholder="Email" autocapitalize="off" ></ion-input>
@@ -50,9 +54,9 @@
       </ion-button>
     </ion-row>
 
-  <div class="social-auth-options">
-    <p class="options-divider">Or</p>
-    <ion-button class="social-auth-btn" color="primary" expand="block" (click)="facebookSignIn()">Facebook Sign In</ion-button>
-    <ion-button class="social-auth-btn google-auth-btn" color="danger" expand="block" (click)="googleSignIn()">Google Sign In</ion-button>
-  </div>
+<!--  <div class="social-auth-options">-->
+<!--    <p class="options-divider">Or</p>-->
+<!--    <ion-button class="social-auth-btn" color="primary" expand="block" (click)="facebookSignIn()">Facebook Sign In</ion-button>-->
+<!--    <ion-button class="social-auth-btn google-auth-btn" color="danger" expand="block" (click)="googleSignIn()">Google Sign In</ion-button>-->
+<!--  </div>-->
 </ion-content>

@@ -20,23 +20,24 @@ build:##@Global Build project : make build MODE=image, make build MODE=build-dis
 
 ssh: ##@Local Access the docker container
 	@docker container run -it \
-  	-u ${UID_LOCAL}:${GID_LOCAL} \
-  			--network="neo_network" \
-	-v "${PWD}/${APP_DIR}":/${APP_DIR} \
-	$(IMAGE_DEPLOY_DEV) /bin/sh
+        -u root:root \
+        --network="neo_network" \
+        -v "${PWD}/${APP_DIR}":/${APP_DIR} \
+        $(IMAGE_DEPLOY_DEV) /bin/sh
 
 install: ##@Global install dependencies : make install
 	@docker container run --workdir "/${APP_DIR}" --rm -i \
+	  	-u root:root \
 		-v "${PWD}/${APP_DIR}":/${APP_DIR}:rw \
 		${IMAGE_DEPLOY_DEV} \
 		npm install --force
 
 
-build-ionic: ##@Global install dependencies : make build-ionic D IONIC="generate component components/button"
-	@docker container run --workdir "/${APP_DIR}" -i \
-		-v "${PWD}/${APP_DIR}":/${APP_DIR} \
-		${IMAGE_DEPLOY_DEV} \
-		ionic $(IONIC)
+build-ionic: ##@Global install dependencies : make build-ionic D IONIC="generate page page/my-account"
+	docker container run --workdir "/${APP_DIR}" -it \
+	  	-u root:root \
+		-v "${PWD}/${APP_DIR}":/"${APP_DIR}/${APP_DIR}" \
+		${IMAGE_DEPLOY_DEV} /bin/sh
 
 
 up: ##@Local Start the project

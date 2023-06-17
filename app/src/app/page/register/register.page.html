@@ -1,47 +1,50 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title [class.title] >Registro</ion-title>
+    <ion-title [class.title] >Crear usuario</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="sign-in-content">
   <ion-thumbnail class="user-image">
     <img src="./../../../assets/images/avatar.png">
   </ion-thumbnail>
   <ion-list>
     <ion-item>
       <ion-label position="floating">Nombre</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input [(ngModel)]="name" name="name"  type="text"></ion-input>
     </ion-item>
-
+    <ion-item>
+      <ion-label position="floating">Apellidos</ion-label>
+      <ion-input [(ngModel)]="lastName" name="lastName"  type="text"></ion-input>
+    </ion-item>
     <ion-item>
       <ion-label position="floating">Correo electrónico</ion-label>
-      <ion-input type="email"></ion-input>
+      <ion-input [(ngModel)]="email" name="email"  type="email" ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input [(ngModel)]="password" name="password"  type="password"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">Cell</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input [(ngModel)]="cell" name="cell"  type="text"></ion-input>
     </ion-item>
-
-<!--    <ion-item>-->
-<!--      <ion-label position="floating">Tipo de Usuario</ion-label>-->
-<!--      <ion-input type="text"></ion-input>-->
-<!--    </ion-item>-->
     <ion-item>
-      <ion-select label="Tipo de Usuario" placeholder="Seleccione">
+      <ion-select  [(ngModel)]="type" name="type" label="Tipo de Usuario" placeholder="Seleccione">
         <ion-select-option value="1">Arrendatario</ion-select-option>
         <ion-select-option value="2">Arrendador</ion-select-option>
       </ion-select>
     </ion-item>
 
   </ion-list>
-
-  <ion-button class="sign-in-btn" type="submit" expand="block" (click)="register()">Ingresar</ion-button>
+  <div class="error-container {{validateResponseService.class}}">
+    <div class="error-message">
+      <ion-icon name="information-circle-outline"></ion-icon>
+      <span>{{validateResponseService.message}}</span>
+    </div>
+  </div>
+  <ion-button class="sign-in-btn" type="submit" expand="block" (click)="register()">Guardar</ion-button>
 
 </ion-content>

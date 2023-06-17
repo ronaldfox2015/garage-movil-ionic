@@ -1,6 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import { UserService } from './../../service/user.service';
-import {UserModel, Validate} from "../../service/model/user.model";
+import {ValidationModel, Validate} from "../../service/model/Validation.model";
+import {Router} from "@angular/router";
+import { Storage } from '@ionic/storage';
+import {Session} from "../../service/model/session.model";
+import {MenuDto} from "../../service/dto/menu.dto";
 
 interface User {
   email: string;
@@ -21,7 +25,7 @@ export class LoginPage implements OnInit{
   validateTypeUser: Validate
   validateResponseService: Validate
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private router: Router,private storage: Storage) {
     this.validateEmail = {
       status : true,
       message: '',
@@ -45,22 +49,36 @@ export class LoginPage implements OnInit{
   }
 
   ngOnInit() {
+    this.storage.create();
+
   }
 
   async onSubmit() {
     console.log('event: ', this)
-    this.validateEmail = UserModel.validateEmail(this.email)
+    this.validateEmail = ValidationModel.validateEmail(this.email)
     if (this.validateEmail.status) {
-      this.validateEmail = UserModel.validateRequired(this.email, 'email')
-      this.validatePassword = UserModel.validateRequired(this.password, 'password')
-      this.validateTypeUser = UserModel.validateRequired(this.type, 'tipo usuario')
+      this.validateEmail = ValidationModel.validateRequired(this.email, 'email')
+      this.validatePassword = ValidationModel.validateRequired(this.password, 'password')
+      this.validateTypeUser = ValidationModel.validateRequired(this.type, 'tipo usuario')
       if (this.validateEmail.status && this.validatePassword.status && this.validateTypeUser.status){
-        this.userService.login(this.email, this.password, Number(this.type)).subscribe(
-          (response) => {
+        await this.userService.login(this.email, this.password, Number(this.type)).subscribe(
+          async (response) => {
+            console.log(response)
             this.validateResponseService.message = response.retorno.mensaje
-            if(response.retorno.idError) {
+            if (response.retorno.idError) {
               this.validateResponseService.status = false
               this.validateResponseService.class = ''
+            } else {
+              const session: Session = {
+                user: await this.userService.get(response.idUsuario),
+                email: this.email,
+                message: 'Bienvenido ' + this.email,
+                role: response.idTipoUsuario
+              }
+              await this.storage.set('session', JSON.stringify(session));
+              const modelMenu = new MenuDto(response.idTipoUsuario)
+              await this.storage.set('menu', JSON.stringify(modelMenu.getData()))
+              window.location.assign('/search');
             }
 
           },

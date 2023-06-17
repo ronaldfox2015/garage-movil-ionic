@@ -59,6 +59,7 @@ ion-content {
         padding-inline-end: 8px;
       }
     }
+
   }
 
   .sign-in-btn {
@@ -73,4 +74,7 @@ ion-content {
       --padding-end: 0px;
     }
   }
+}
+.hidden {
+  display: none;
 }

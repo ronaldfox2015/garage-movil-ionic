@@ -17,6 +17,26 @@ const routes: Routes = [
   {
     path: 'search',
     loadChildren: () => import('./page/search/search.module').then( m => m.SearchPageModule)
+  },
+  {
+    path: 'reservation',
+    loadChildren: () => import('./page/reservation/reservation.module').then( m => m.ReservationPageModule)
+  },
+  {
+    path: 'my-account',
+    loadChildren: () => import('./page/my-account/my-account.module').then( m => m.MyAccountPageModule)
+  },
+  {
+    path: 'ad-detail',
+    loadChildren: () => import('./page/ad-detail/ad-detail.module').then( m => m.AdDetailPageModule)
+  },
+  {
+    path: 'logout',
+    loadChildren: () => import('./page/logout/logout.module').then( m => m.LogoutPageModule)
+  },
+  {
+    path: 'payment',
+    loadChildren: () => import('./page/payment/payment.module').then( m => m.PaymentPageModule)
   }
 ];
 
