@@ -8,7 +8,8 @@ export class GarageDetailDto {
       title: String(data.nombre),
       location: String(data.direccion),
       description: String(data.condiciones),
-      vehicleCapacity: Number(data.capacidadVehiculos)
+      vehicleCapacity: Number(data.capacidadVehiculos),
+      personId: Number(data.idPersona)
     }
     return model
   }

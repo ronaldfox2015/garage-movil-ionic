@@ -8,7 +8,8 @@ export class SearchDto {
         title: String(item.nombre),
         location: String(item.direccion),
         description: String(item.condiciones),
-        vehicleCapacity:Number(item.capacidadVehiculos)
+        vehicleCapacity:Number(item.capacidadVehiculos),
+        personId: 19
       }
       modelSearch.push(model)
     })
@@ -23,6 +24,7 @@ export interface Search {
   location: string
   description: string
   vehicleCapacity: number
+  personId: number
 }
 
 export interface GarageDTO {

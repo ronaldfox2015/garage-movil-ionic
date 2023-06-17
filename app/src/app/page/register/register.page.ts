@@ -79,7 +79,7 @@ export class RegisterPage implements OnInit, OnDestroy {
                       console.log(response)
                       await this.storage.create()
                       const session: Session = {
-                        user: await this.userService.get(response.idUsuario),
+                        user: await this.userService.get(roleModel.idUsuario),
                         email: this.email,
                         message: 'Bienvenido ' + this.email,
                         role: Number(this.type)

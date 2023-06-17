@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {PersonModel} from "./model/person.model";
-import {SearchDto} from "./dto/search.dto";
 import {VehiclesModel} from "./model/vehicles.model";
 import {Vehicles, VehiclesDto} from "./dto/vehicles.dto";
 import {ReservationDto} from "./dto/reservation.dto";

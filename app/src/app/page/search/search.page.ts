@@ -12,7 +12,8 @@ export class SearchPage implements OnInit {
   item: any;
   searchTerm: any;
   searchResults: any;
-
+  page : number = 1
+  rows: number = 5
   constructor(private searchService: SearchService, private router: Router, private storage: Storage) {
   }
 
@@ -22,7 +23,10 @@ export class SearchPage implements OnInit {
   }
 
   async search() {
-    this.searchResults = await this.searchService.get(this.searchTerm);
+    console.log(this.searchTerm)
+    this.page = 1
+    this.rows = this.rows + 5
+    this.searchResults = await this.searchService.get(this.searchTerm, this.page, this.rows);
 
   }
 
@@ -31,6 +35,17 @@ export class SearchPage implements OnInit {
     await this.storage.set('garageId', JSON.stringify(id))
     console.log('garageId: ', id)
     this.router.navigate(['/ad-detail']);
+
+  }
+
+  async onScroll(event: any) {
+    this.page = 1
+    this.rows = this.rows + 5
+
+    this.searchResults  = await this.searchService.get('', this.page, this.rows);
+    console.log(this.searchResults)
+
+    event.target.complete();
 
   }
 }

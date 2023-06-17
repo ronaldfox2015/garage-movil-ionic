@@ -11,7 +11,44 @@ export class SearchService {
   constructor(private http: HttpClient) {
   }
 
-  async get(name: string = ''): Promise<unknown> {
+  async get(name: string = '', page: number = 1, rows: number = 5): Promise<unknown> {
+
+    const params = {
+      "idCochera": 0,
+      "idPersona": 0,
+      "idUbicacion": 0,
+      "ubicacion": name,
+      "nombre": "",
+      "idUsuarioModificacion": 0,
+      "estado": 0,
+      "fechaInicio": "",
+      "fechaFin": "",
+      "numeroPagina": page,
+      "totalPorPagina": rows
+    }
+    const headers = new HttpHeaders(
+      {
+        'Content-Type': 'application/json'
+      }
+    );
+
+    return new Promise(async (resolve, reject) => {
+      await this.http.post(`/api/Cochera/ObtenerPorConcepto`, JSON.stringify(params), {headers}).subscribe(
+        (response: any) => {
+          console.log(response)
+
+          resolve(SearchDto.format(response));
+        },
+        (error) => {
+          console.log(error)
+
+          reject([]);
+        },
+      );
+    })
+
+  }
+  async getLocation(name: string = ''): Promise<unknown> {
 
     const params = {
       "idCochera": 0,
@@ -48,7 +85,6 @@ export class SearchService {
     })
 
   }
-
   async getByGarageId(garageId: number = 0): Promise<unknown> {
     const headers = new HttpHeaders(
       {

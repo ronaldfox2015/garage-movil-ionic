@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-account.page.scss'],
 })
 export class MyAccountPage implements OnInit {
+  name: any;
+  lastName: any;
+  businessName: any;
+  documentType: any;
+  documentNumber: any;
+  cell: any;
+  validateResponseService: any;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  register() {
+
+  }
 }
