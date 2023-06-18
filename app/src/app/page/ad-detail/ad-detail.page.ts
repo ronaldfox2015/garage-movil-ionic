@@ -43,6 +43,9 @@ export class AdDetailPage implements OnInit {
     await this.storage.create()
     this.garageId = await this.storage.get('garageId')
     this.session = JSON.parse(await this.storage.get('session'))
+    if (this.session === null){
+      this.router.navigate(['/login']);
+    }
   }
 
   async garage(garageId: number): Promise<void> {

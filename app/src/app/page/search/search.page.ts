@@ -14,14 +14,24 @@ export class SearchPage implements OnInit {
   searchResults: any;
   page : number = 1
   rows: number = 5
+  garageId: number = 0
+  session: any = null
   constructor(private searchService: SearchService, private router: Router, private storage: Storage) {
   }
 
   async ngOnInit() {
     this.searchResults  = await this.searchService.get();
-
+    this.sessionUser()
   }
+  async sessionUser(){
+    await this.storage.create()
+    this.garageId = await this.storage.get('garageId')
+    this.session = JSON.parse(await this.storage.get('session'))
+    if (this.session === null){
+      this.router.navigate(['/login']);
 
+    }
+  }
   async search() {
     console.log(this.searchTerm)
     this.page = 1

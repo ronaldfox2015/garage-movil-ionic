@@ -6,14 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="b5096b14-7b59-47e8-b06e-df074f9e40d5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/page/my-account/my-account.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/page/my-account/my-account.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/page/register/register.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/page/register/register.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/page/search/search.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/page/search/search.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/app.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/app.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/page/ad-detail/ad-detail.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/page/ad-detail/ad-detail.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/page/reservation/reservation.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/page/reservation/reservation.page.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/app/page/search/search.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/page/search/search.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/service/dto/garage-detail.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/service/dto/garage-detail.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/service/dto/search.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/service/dto/search.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/service/person.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/service/person.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/service/search.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/service/search.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +82,7 @@
       <workItem from="1686787092142" duration="2932000" />
       <workItem from="1686838164407" duration="63000" />
       <workItem from="1686870645231" duration="10576000" />
-      <workItem from="1686957527621" duration="32093000" />
+      <workItem from="1686957527621" duration="39823000" />
     </task>
     <servers />
   </component>
@@ -101,5 +99,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/src/app/page/reservation/reservation.page.ts</url>
+          <line>14</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
