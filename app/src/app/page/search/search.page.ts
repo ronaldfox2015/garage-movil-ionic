@@ -37,7 +37,7 @@ export class SearchPage implements OnInit {
     this.page = 1
     this.rows = this.rows + 5
     this.searchResults = await this.searchService.get(this.searchTerm, this.page, this.rows);
-
+    console.log(this.searchResults)
   }
 
   async adDetail(id: number) {

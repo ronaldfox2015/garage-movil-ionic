@@ -28,8 +28,10 @@ export class PersonService {
     return await new Promise(async (resolve, reject) => {
       await this.http.post(`/api/Vehiculo`, JSON.stringify(vehiclesModel), { headers: this.headers }).subscribe(
         async (response: any) => {
-          const vehicles: Vehicles[] = await this.getVehiclesAll(vehiclesModel.idPersona)
-          this.addReservation( {
+          const vehicles: Vehicles[] = await this.getVehiclesAll(await response.idPersona)
+          console.log(response)
+          console.log(JSON.stringify(vehiclesModel))
+          await this.addReservation( {
             idCochera: garageId,
             idVehiculo: vehicles[vehicles.length - 1].idVehiculo,
             fechaReserva: startDate,
@@ -46,7 +48,6 @@ export class PersonService {
               console.log(error)
 
           })
-          resolve(vehicles[vehicles.length - 1].idVehiculo);
         },
         (error) => {
           reject(0);
@@ -71,6 +72,7 @@ export class PersonService {
       }
       await this.http.post(`/api/Vehiculo/ObtenerPorConcepto`, JSON.stringify(body), { headers: this.headers }).subscribe(
         (response: any) => {
+          console.log(response)
           resolve(response as Vehicles[]);
         },
         (error) => {
@@ -88,5 +90,41 @@ export class PersonService {
       }
     );
     return this.http.post(`/api/Reserva`, JSON.stringify(reservation), { headers });
+  }
+
+  async getById(personId: number): Promise<any> {
+    return new Promise(async (resolve, reject) => {
+      await this.http.get(`/api/Persona/${personId}`, { headers: this.headers }).subscribe(
+        (response: any) => {
+          resolve(PersonModel.create(
+            response.nombres,
+            response.apellidos,
+            response.razonSocial,
+            response.idTipoDocumento,
+            response.numeroDocumento,
+            response.numeroCelular,
+            response.direccion,
+            response.logo
+          ));
+        },
+        (error) => {
+          reject([]);
+        },
+      );
+    })
+  }
+
+  async update(personId: number, person: PersonModel): Promise<any> {
+    return new Promise(async (resolve, reject) => {
+      await this.http.put(`/api/Persona/${personId}`,JSON.stringify(person), { headers: this.headers }).subscribe(
+        (response: any) => {
+          console.log(response)
+          resolve(response);
+        },
+        (error) => {
+          reject([]);
+        },
+      );
+    })
   }
 }

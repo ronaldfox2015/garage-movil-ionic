@@ -69,12 +69,9 @@ export class AdDetailPage implements OnInit {
         descripcion: this.description
       },
       this.garageId,
-      this.startDate,
-      this.endDate
+      this.startDate.replace('T',' '),
+      this.endDate.replace('T',' ')
     )
     this.router.navigate(['/payment']);
-
-
-
   }
 }

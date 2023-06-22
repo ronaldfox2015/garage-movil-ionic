@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Publicar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="sign-in-content">
+  <form>
+    <ion-thumbnail class="user-image">
+      <img src="./../../../assets/images/avatar.png">
+    </ion-thumbnail>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Titulo de publicación</ion-label>
+        <ion-input [(ngModel)]="name" name="name"  type="text" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Dirección</ion-label>
+        <ion-input [(ngModel)]="address" name="address"  type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">N° de vehiculos</ion-label>
+        <ion-input [(ngModel)]="vehicleCapacity" name="vehicleCapacity"  type="text" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <input type="file" (change)="onFileSelected($event)" accept="image/*">
+        <button type="submit">Subir imagen</button>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Condiciones</ion-label>
+        <ion-input [(ngModel)]="conditions" name="conditions"  type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Dias de tolerancia</ion-label>
+        <ion-input [(ngModel)]="daysBeforeReservation" name="daysBeforeReservation"  type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Horas de tolerancia</ion-label>
+        <ion-input [(ngModel)]="hoursBeforeReservation" name="hoursBeforeReservation"  type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Tiempo de tolerancia</ion-label>
+        <ion-input [(ngModel)]="toleranceTime" name="toleranceTime"  type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="error-container {{validateResponseService.class}}">
+      <div class="error-message">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <span>{{validateResponseService.message}}</span>
+      </div>
+    </div>
+    <ion-button class="sign-in-btn" type="submit" expand="block" (click)="publish()">Guardar</ion-button>
+  </form>
+
+
+</ion-content>

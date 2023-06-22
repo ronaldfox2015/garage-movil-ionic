@@ -21,8 +21,8 @@ export class MenuDto {
         break
       case 2:
         myAccount = new MenuObject('/my-account', 'Mi cuenta');
-        post = new MenuObject('/post', 'Publicar');
-        announcementsList = new MenuObject('/post', 'Listar Avisos activo');
+        post = new MenuObject('/publish', 'Publicar');
+        announcementsList = new MenuObject('/list-advertisement', 'Listar Avisos activo');
         logout = new MenuObject('/logout', 'Cerrar sesión');
         this.data.push(myAccount)
         this.data.push(post)

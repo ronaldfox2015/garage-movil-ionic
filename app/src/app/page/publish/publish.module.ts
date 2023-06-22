@@ -4,9 +4,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MyAccountPageRoutingModule } from './my-account-routing.module';
+import { PublishPageRoutingModule } from './publish-routing.module';
 
-import { MyAccountPage } from './my-account.page';
+import { PublishPage } from './publish.page';
 
 @NgModule({
   imports: [
@@ -14,8 +14,8 @@ import { MyAccountPage } from './my-account.page';
     ReactiveFormsModule,
     FormsModule,
     IonicModule,
-    MyAccountPageRoutingModule
+    PublishPageRoutingModule
   ],
-  declarations: [MyAccountPage]
+  declarations: [PublishPage]
 })
-export class MyAccountPageModule {}
+export class PublishPageModule {}

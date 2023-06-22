@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b5096b14-7b59-47e8-b06e-df074f9e40d5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/app.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/app.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/page/ad-detail/ad-detail.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/page/ad-detail/ad-detail.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/page/reservation/reservation.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/page/reservation/reservation.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app/page/search/search.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/page/search/search.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app/service/dto/menu.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/service/dto/menu.dto.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +46,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/ronald-neoauto/app/garage-movil-ionic/app/src/app/service/model",
+    "last_opened_file_path": "/home/ronald-neoauto/app/garage-movil-ionic",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -82,7 +78,10 @@
       <workItem from="1686787092142" duration="2932000" />
       <workItem from="1686838164407" duration="63000" />
       <workItem from="1686870645231" duration="10576000" />
-      <workItem from="1686957527621" duration="39823000" />
+      <workItem from="1686957527621" duration="41800000" />
+      <workItem from="1687230386508" duration="6516000" />
+      <workItem from="1687325671328" duration="4839000" />
+      <workItem from="1687393552861" duration="12288000" />
     </task>
     <servers />
   </component>
@@ -106,7 +105,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app/src/app/page/reservation/reservation.page.ts</url>
           <line>14</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

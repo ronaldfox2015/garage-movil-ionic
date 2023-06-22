@@ -30,10 +30,10 @@ install: ##@Global install dependencies : make install
 	  	-u root:root \
 		-v "${PWD}/${APP_DIR}":/${APP_DIR}:rw \
 		${IMAGE_DEPLOY_DEV} \
-		npm install --force
+		npm install
 
 
-build-ionic: ##@Global install dependencies : make build-ionic D IONIC="generate page page/my-account"
+build-ionic: ##@Global install dependencies : make build-ionic D IONIC="ionic generate page page/my-account"
 	docker container run --workdir "/${APP_DIR}" -it \
 	  	-u root:root \
 		-v "${PWD}/${APP_DIR}":/"${APP_DIR}/${APP_DIR}" \

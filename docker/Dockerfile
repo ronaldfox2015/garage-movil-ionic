@@ -14,7 +14,9 @@ RUN chmod 777 -R /app
 RUN mkdir -p /app/app
 RUN npm install -g npm@9.7.1
 RUN npm install -g cordova
-RUN npm i -g ionic
+#RUN npm i -g ionic
+RUN npm i -g @ionic/cli
+
 #RUN npm install -g @ionic/cli
 RUN npm i -D -E @angular/cli
 RUN npm i cordova-plugin-facebook-connect

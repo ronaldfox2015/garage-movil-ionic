@@ -5,47 +5,47 @@
 </ion-header>
 
 <ion-content class="sign-in-content">
-  <ion-thumbnail class="user-image">
-    <img src="./../../../assets/images/avatar.png">
-  </ion-thumbnail>
-  <ion-list>
-    <ion-item>
-      <ion-label position="floating">Nombre</ion-label>
-      <ion-input [(ngModel)]="name" name="name"  type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Apellidos</ion-label>
-      <ion-input [(ngModel)]="lastName" name="lastName"  type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Razon social</ion-label>
-      <ion-input [(ngModel)]="businessName" name="businessName"  type="text" ></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-select  [(ngModel)]="documentType" name="documentType" label="Tipo de documento" placeholder="Seleccione">
-        <ion-select-option value="1">DNI</ion-select-option>
-        <ion-select-option value="2">RUC</ion-select-option>
-      </ion-select>
-    </ion-item>
+  <form>
+    <ion-thumbnail class="user-image">
+      <img src="./../../../assets/images/avatar.png">
+    </ion-thumbnail>
+    <ion-list *ngIf="personModel">
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input [(ngModel)]="name" name="name"  type="text" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Apellidos</ion-label>
+        <ion-input [(ngModel)]="lastName" name="lastName"  type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Razon social</ion-label>
+        <ion-input [(ngModel)]="businessName" name="businessName"  type="text" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-select  [(ngModel)]="documentType" name="documentType" label="Tipo de documento" placeholder="Seleccione">
+          <ion-select-option value="1">DNI</ion-select-option>
+          <ion-select-option value="2">RUC</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">N° de Documento</ion-label>
+        <ion-input [(ngModel)]="documentNumber" name="documentNumber"  type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Cell</ion-label>
+        <ion-input [(ngModel)]="cell" name="cell"  type="text"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">N° de Documento</ion-label>
-      <ion-input [(ngModel)]="documentNumber" name="documentNumber"  type="text"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">Cell</ion-label>
-      <ion-input [(ngModel)]="cell" name="cell"  type="text"></ion-input>
-    </ion-item>
-
-
-  </ion-list>
-  <div class="error-container {{validateResponseService.class}}">
-    <div class="error-message">
-      <ion-icon name="information-circle-outline"></ion-icon>
-      <span>{{validateResponseService.message}}</span>
+    </ion-list>
+    <div class="error-container {{validateResponseService.class}}">
+      <div class="error-message">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <span>{{validateResponseService.message}}</span>
+      </div>
     </div>
-  </div>
-  <ion-button class="sign-in-btn" type="submit" expand="block" (click)="register()">Guardar</ion-button>
+    <ion-button class="sign-in-btn" type="submit" expand="block" (click)="register()">Guardar</ion-button>
+  </form>
+
 
 </ion-content>
