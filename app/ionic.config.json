@@ -1,8 +1,7 @@
 {
-  "name": "app",
+  "name": "garage",
   "integrations": {
-    "capacitor": {},
-    "cordova": {}
+    "capacitor": {}
   },
-  "type": "angular"
+  "type": "vue-vite"
 }
