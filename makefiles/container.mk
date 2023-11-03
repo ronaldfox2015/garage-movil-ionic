@@ -26,11 +26,11 @@ ssh: ##@Local Access the docker container
         $(IMAGE_DEPLOY_DEV) /bin/sh
 
 install: ##@Global install dependencies : make install
-	@docker container run --workdir "/${APP_DIR}" --rm -i \
+	docker container run --workdir "/${APP_DIR}" --rm -i \
 	  	-u root:root \
 		-v "${PWD}/${APP_DIR}":/${APP_DIR}:rw \
 		${IMAGE_DEPLOY_DEV} \
-		npm install
+		yarn install
 
 
 build-ionic: ##@Global install dependencies : make build-ionic D IONIC="ionic generate page page/my-account"

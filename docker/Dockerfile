@@ -11,7 +11,7 @@ COPY config.xml ./app
 COPY ionic.config.json ./app
 WORKDIR /app
 RUN chmod 777 -R /app
-RUN mkdir -p /app/app
+RUN mkdir -p /app
 RUN npm install -g npm@9.7.1
 RUN npm install -g cordova
 #RUN npm i -g ionic
